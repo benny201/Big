@@ -1,8 +1,14 @@
 var User = require('../lib/mongo').User;
 
 module.exports = {
-  // 注册一个用户
-  create: function create(user) {
-    return User.create(user).exec();
+  //create new user
+  create: function(user) {
+    return User.create(user);
+  },
+
+  //validate user to log in
+  getUserByName: function(name) {
+    return User
+      .findOne({ 'name': name });
   }
 };
