@@ -20,12 +20,12 @@ router.get('/',checkNotLogin, function(req, res, next) {
 // sign up
 router.post('/', checkNotLogin, function(req, res, next) {
   var name = req.fields.name;
-  console.log('what: ' + name);
+  // console.log('what: ' + name);
   var gender = req.fields.gender;
   var bio = req.fields.bio;
   var avatar = req.files.avatar.path.split(path.sep).pop();
-  console.log('what: ' + avatar);
-  console.log('what: ' + avatar.name);
+  // console.log('what: ' + avatar);
+  // console.log('what: ' + avatar.name);
   var password = req.fields.password;
   var repassword = req.fields.repassword;
 
@@ -82,12 +82,12 @@ router.post('/', checkNotLogin, function(req, res, next) {
   //save date
   userModel.create(user)
     .then(function (result) {
-      console.log("result" + result);
+      // console.log("result" + result);
       // 此 user 是插入 mongodb 后的值，包含 _id
       user = result;
       // 将用户信息存入 session
       delete user['password'];
-      console.log("now" + user);
+      // console.log("now" + user);
       req.session.user = user;
       // 写入 flash
       req.flash('success', '注册成功');
@@ -100,7 +100,7 @@ router.post('/', checkNotLogin, function(req, res, next) {
         req.flash('error', '用户名已被占用');
         return res.redirect('/signup');
       }
-      console.log("error???");
+      // console.log("error???");
       next(e);
     });
 

@@ -11,6 +11,8 @@ var checkNotLogin = require('../middlewares/check').checkNotLogin;
 var sha1 = require('sha1');
 //user model
 var UserModel = require('../models/users');
+//midllewares
+var create_at = require('../middlewares/create_at').afterFindOne;
 
 
 
@@ -27,6 +29,9 @@ router.post('/', checkNotLogin, function(req, res, next) {
 
   //check name&password
   UserModel.getUserByName(name)
+    .then(function(result) {
+      return create_at.afterFind(result);
+    })
     .then(function(user) {
       if (!user) {
         req.flash('error', '用户不存在哦亲!');
@@ -42,8 +47,8 @@ router.post('/', checkNotLogin, function(req, res, next) {
 
       // console.log('password now' + user.password);
       //delete password
-      // delete user['password'];
-      console.log('now' + user.password);
+      delete user['password'];
+      // console.log('now' + user.password);
 
       //seesion
       req.session.user = user;
