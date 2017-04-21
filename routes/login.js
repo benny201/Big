@@ -12,7 +12,7 @@ var sha1 = require('sha1');
 //user model
 var UserModel = require('../models/users');
 //midllewares
-var create_at = require('../middlewares/create_at').afterFindOne;
+var create_at = require('../middlewares/create_at');
 
 
 
@@ -30,7 +30,7 @@ router.post('/', checkNotLogin, function(req, res, next) {
   //check name&password
   UserModel.getUserByName(name)
     .then(function(result) {
-      return create_at.afterFind(result);
+      return create_at.afterFindOne(result);
     })
     .then(function(user) {
       if (!user) {
