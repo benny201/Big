@@ -10,15 +10,21 @@
     </div>
 
     <div class="eight wide column">
-      <div class="ui segment">
-        <h3><a href="/posts/<%= post._id %>"><%= post.title %></a></h3>
-        <pre><%- post.content %></pre>
-        <div>
+
+      <div class="ui segment content-height">
+        <div class="width">
+          <h2><a href="/posts/<%= post._id %>"><%= post.title %></a></h2>
+          <span><a href="">By / <%= post.author.name %></a></span>
+          <br>
+          <br>
+          <pre><%- post.content %></pre>
+          <br>
+          <br>
+          <br>
           <span class="tag"><%= post.created_at %></span>
-          <span class="tag right">
+          <span class="tag ">
             <span>浏览(<%= post.pv %>)</span>
             <span>留言(<%= post.commentsCount %>)</span>
-
             <% if (user && post.author._id && user._id.toString() === post.author._id.toString()) { %>
               <div class="ui inline dropdown">
                 <div class="text"></div>
@@ -29,10 +35,17 @@
                 </div>
               </div>
             <% } %>
-
           </span>
+
+        </div>
+
+        <div class="right">
+          <img src="/img/article.jpg" alt="article-img">
         </div>
       </div>
+
+
+
     </div>
   </div>
 </div>

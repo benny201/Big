@@ -35,12 +35,13 @@ router.post('/', checkNotLogin, function(req, res, next) {
     .then(function(user) {
       if (!user) {
         req.flash('error', '用户不存在哦亲!');
-        return res.res.redirect('back');
+        return res.redirect('back');
       }
 
       //check
       if (sha1(password) !== user.password) {
         req.flash('error', '密码错误哦亲!');
+        return res.redirect('back');
       }
 
       req.flash('success', '登录成功!');

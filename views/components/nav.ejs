@@ -1,10 +1,45 @@
-<div class="nav">
-  <div class="ui grid">
-    <div class="four wide column"></div>
+<div class="nav center">
+  <div class="ui grid height">
+    <div class="three wide column"></div>
+    <div class="two wide column ">
+      <a class="nav-center" href="/posts"><h1>BIG</h1></a>
+    </div>
+    <div class="one wide column">
+      <a class="nav-h4-center" href="/posts"><h3><i class="block layout icon"></i>首页</h3></a>
+    </div>
+    <div class="one wide column">
+      <a class="nav-h4-center" href="/posts/all"><h3><i class="photo icon"></i>博文</h3></a>
+    </div>
+    <div class="one wide column">
+      <a class="nav-h4-center" href="/posts/all"><h3><i class="fork icon"></i>科技</h3></a>
+    </div>
+    <div class="one wide column">
+      <a class="nav-h4-center" href="/posts/all"><h3><i class="line chart icon"></i>炒股</h3></a>
+    </div>
+    <div class="one wide column"></div>
+    <div class="one wide column center">
+      <a class="nav-center" href="/posts/create"><img src="/img/pen.png" alt="create_post"></a>
+    </div>
 
-    <div class="eight wide column">
-      <a href="/posts"><h1><%= blog.title %></h1></a>
-      <p><%= blog.description %></p>
+    <!-- login/singup -->
+    <div class="three wide column nav-setting">
+      <% if (user) { %>
+        <div class="login">
+          <a  href="/posts?author=<%= user._id %>">个人主页</a>
+        </div>
+        <div class="login">
+          <a  href="/logout">登出</a>
+        </div>
+
+
+      <% } else { %>
+        <div class="signup">
+          <a href="/login">登录</a>
+          |
+          <a href="/signup">注册</a>
+        </div>
+
+      <% } %>
     </div>
   </div>
 </div>

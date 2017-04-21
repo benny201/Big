@@ -1,10 +1,16 @@
 /* ---------- 全局样式 ---------- */
 
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
 body {
-  width: 1100px;
+  /*width: 1100px;*/
   height: 100%;
   margin: 0 auto;
-  padding-top: 40px;
+  /*padding-top: 40px;*/
+  background-color: #fafafa;
 }
 
 a:hover {
@@ -25,40 +31,146 @@ a:hover {
 
 /* ---------- nav ---------- */
 
+/*.all {
+  height: 100px !important;
+}*/
+.height {
+  height: 120px;
+}
+.nav-center {
+  display: inline-block;
+  padding-top: 34px;
+}
+.nav-h4-center {
+  display: inline-block;
+  padding-top: 43px;
+}
+
 .nav {
+  /*position: fixed;*/
+  z-index: 1000;
+  width: 100%;
+  /*min-width: 1200px;*/
+  background-color: rgba(255, 255, 255, 0.95);
+  height: 120px;
   margin-bottom: 20px;
   color: #999;
-  text-align: center;
+  text-align: left;
 }
 
 .nav h1 {
   color: #4fc08d;
   display: inline-block;
-  margin: 10px 0;
+  /*margin: 10px 0;*/
+}
+.nav h3 {
+  color: #333;
+  display: inline-block;
+  /*margin: 10px 0;*/
+}
+
+.post {
+  width: 194px;
+  height: 194px;
+  /*display: block;*/
+  border-radius: 50%;
+  border: 10px solid #3498DB;
 }
 
 /* ---------- nav-setting ---------- */
+.center {
+  /*display: flex;*/
+  /*align-content: center; */
+  text-align: center;
+}
 
-.nav-setting {
+.nav-setting a{
+  display: inline-block;
+}
+.nav-setting div {
+  display: inline-block;
+}
+
+.nav-setting .login {
+  width: 80px;
+  height: 40px;
+  text-align: center;
+  border-radius: 25px;
+  border: 1px solid #4fc08d;
+  margin-top: 38px;
+  font-size: 15px
+}
+
+.nav-setting .login a {
+  padding-top: 10px;
+  color: #333;
+}
+
+
+.nav-setting .signup {
+  width: 160px;
+  height: 50px;
+  text-align: center;
+  border-radius: 25px;
+  border: 1px solid #4fc08d;
+  margin-top: 30px;
+  font-size: 15px
+}
+
+.nav-setting .signup a {
+  padding-top: 12px;
+  color: #333;
+}
+
+/*.nav-setting {
   position: fixed;
   right: 30px;
   top: 35px;
   z-index: 999;
-}
+}*/
 
-.nav-setting .ui.dropdown.button {
+/*.nav-setting .ui.dropdown.button {
   padding: 10px 10px 0 10px;
   background-color: #fff !important;
-}
+}*/
 
-.nav-setting .icon.bars {
+/*.nav-setting .icon.bars {
   color: #000;
   font-size: 18px;
+}*/
+/* ---------- recommend ---------- */
+.recommend {
+  margin-top: 10px;
+}
+
+.recommend-img {
+  width: 100% !important;
+  height: 300px;
+  border: 1px solid rgba(34, 36, 38, .15);
+  background-color: white;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 /* ---------- post-content ---------- */
+.blog {
+  margin-top: 50px !important;
+  margin-bottom: 10px !important;
+}
 
-.post-content h3 a {
+.content-height {
+  height: 200px !important;
+}
+
+.segment pre {
+  display: inline-block;
+}
+
+.segment a {
+  display: inline-block;
+}
+
+.post-content h2 a {
   color: #4fc08d !important;
 }
 
@@ -68,6 +180,17 @@ a:hover {
   color: #999;
 }
 
+.width {
+  float: left;
+  margin-right: 0;
+  width: calc(100% - 283px) !important;
+}
+
+.right {
+  position: relative;
+  float: left;
+  margin-right: 0;
+}
 .post-content .tag.right {
   float: right;
   margin-right: 0;
@@ -75,4 +198,39 @@ a:hover {
 
 .post-content .tag.right a {
   color: #999;
+}
+/*－－－－－comments－－－－－*/
+.comments {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+/*----------------footer--------------*/
+.fixed-footer {
+  height: 118px;
+  width: 100%;
+  margin-top: 20px;
+  background-color: #1a1818;
+  text-align: left;
+}
+.fixed-footer h1{
+  color: white;
+}
+
+footer {
+  height: 118px;
+  width: 100%;
+  margin-top: 20px;
+  background-color: #1a1818;
+  text-align: left;
+  position: fixed;
+  bottom: 0px;
+}
+
+footer h1 {
+  color: white;
+}
+
+.footer-center {
+  display: inline-block;
+  padding-top: 10px;
 }

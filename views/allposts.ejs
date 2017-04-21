@@ -1,0 +1,17 @@
+<%- include('header') %>
+
+
+<div class="ui grid ">
+  <div class="four wide column"></div>
+  <div class="eight wide column">
+    <div class="title-cut"><i class="square icon"></i>博文 | ALL</div>
+  </div>
+  <div class="four wide column"></div>
+</div>
+
+
+<% posts.forEach(function (post) { %>
+  <%- include('components/post-content', { post: post }) %>
+<% }) %>
+
+<%- include('footer') %>

@@ -37,6 +37,31 @@ router.get('/', function(req, res, next) {
     .catch(next);
 });
 
+//Get post page
+router.get('/all', function(req, res, next) {
+
+  var author = req.query.author;
+
+  PostModel.getPosts(author)
+    .then(function(result) {
+      return create_at.afterFind(result);
+    })
+    .then(function(result) {
+      return commentOperation.afterFind(result);
+    })
+    .then(function(result) {
+      return markdownToHTML.M2H_AfterFind(result);
+    })
+    .then(function(posts) {
+      // console.log('all: ' + posts);
+      //only show part of the post
+      res.render('allposts', {
+        posts: posts
+      });
+    })
+    .catch(next);
+});
+
 // create a post
 router.post('/', checkLogin, function(req, res, next) {
   var author = req.session.user._id;
@@ -179,7 +204,7 @@ router.post('/:postId/edit', checkLogin, function(req, res, next) {
 });
 
 
-// GET /posts/:postId/remove 
+// GET /posts/:postId/remove
 router.get('/:postId/remove', checkLogin, function(req, res, next) {
   var postId = req.params.postId;
   var author = req.session.user._id;
