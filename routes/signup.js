@@ -24,6 +24,10 @@ router.post('/', checkNotLogin, function(req, res, next) {
   var gender = req.fields.gender;
   var bio = req.fields.bio;
   var avatar = req.files.avatar.path.split(path.sep).pop();
+  if (avatar.match("/\.(?!(gif$|jpg$|png$))/")) {
+    console.log(avatar);
+    avatar = "default.jpg";
+  }
   // console.log('what: ' + avatar);
   // console.log('what: ' + avatar.name);
   var password = req.fields.password;

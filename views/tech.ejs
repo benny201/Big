@@ -1,0 +1,141 @@
+<%- include('header') %>
+
+<div class="recommend">
+  <div class="ui grid">
+    <div class="three wide column"></div>
+    <div class="ten wide column">
+      <div class="title-cut"><i class="square icon"></i>公众号 | Recom</div>
+    </div>
+    <div class="three wide column"></div>
+  </div>
+</div>
+
+<div class="ui grid">
+  <div class="three wide column"></div>
+  <div class="ten wide column">
+    <div class="ui three cards">
+      <a class="red card" href="/tech/DeveloperWorks">
+        <div class="image">
+          <img src="/img/DeveloperWorks.png" alt="DeveloperWorks">
+        </div>
+      </a>
+
+      <a class="orange card" href="/tech/ThreeSixKe">
+        <div class="image" >
+          <img src="/img/ThreeSixKe.png" alt="ThreeSixKe">
+        </div>
+      </a>
+
+      <a class="yellow card" href="/tech/HuLianWangPingLun">
+        <div class="image" >
+          <img src="/img/HuLianWangPingLun.png" alt="HuLianWangPingLun">
+        </div>
+      </a>
+
+      <a class="olive card" href="/tech/QianDuanDaQuan">
+        <div class="image">
+          <img src="/img/QianDuanDaQuan.png" alt="QianDuanDaQuan">
+        </div>
+      </a>
+
+      <a class="green card" href="/tech/QianDuanZaoDuKe">
+        <div class="image">
+          <img src="/img/QianDuanZaoDuKe.png" alt="QianDuanZaoDuKe">
+        </div>
+      </a>
+      <a class="green card" href="/tech/GuoLin">
+        <div class="image">
+          <img src="/img/GuoLin.png" alt="GuoLin">
+        </div>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- 36氪 -->
+<div class="ui grid blog">
+  <div class="three wide column"></div>
+  <div class="ten wide column">
+    <div class="title-cut"><i class="square icon"></i>36氪</div>
+  </div>
+  <div class="three wide column"></div>
+</div>
+
+<% renderInput.ThreeSixKe.forEach(function (tech) { %>
+  <%- include('components/tech-content', { tech: tech, type: 'ThreeSixKe' }) %>
+<% }) %>
+
+<!-- 互联网评论  -->
+<div class="ui grid blog">
+  <div class="three wide column"></div>
+  <div class="ten wide column">
+    <div class="title-cut"><i class="square icon"></i>互联网评论</div>
+  </div>
+  <div class="three wide column"></div>
+</div>
+
+<% renderInput.HuLianWangPingLun.forEach(function (tech) { %>
+  <%- include('components/tech-content', { tech: tech, type: 'HuLianWangPingLun' }) %>
+<% }) %>
+
+<!-- DeveloperWorks  -->
+<div class="ui grid blog">
+  <div class="three wide column"></div>
+  <div class="ten wide column">
+    <div class="title-cut"><i class="square icon"></i>DeveloperWorks</div>
+  </div>
+  <div class="three wide column"></div>
+</div>
+
+<% renderInput.DeveloperWorks.forEach(function (tech) { %>
+  <%- include('components/tech-content', { tech: tech, type: 'DeveloperWorks' }) %>
+<% }) %>
+
+
+<!-- GuoLin  -->
+<div class="ui grid blog">
+  <div class="three wide column"></div>
+  <div class="ten wide column">
+    <div class="title-cut"><i class="square icon"></i>郭霖</div>
+  </div>
+  <div class="three wide column"></div>
+</div>
+
+<% renderInput.GuoLin.forEach(function (tech) { %>
+  <%- include('components/tech-content', { tech: tech, type: 'GuoLin' }) %>
+<% }) %>
+
+
+<!-- QianDuanZaoDuKe  -->
+<div class="ui grid blog">
+  <div class="three wide column"></div>
+  <div class="ten wide column">
+    <div class="title-cut"><i class="square icon"></i>前端早读课</div>
+  </div>
+  <div class="three wide column"></div>
+</div>
+
+<% renderInput.QianDuanZaoDuKe.forEach(function (tech) { %>
+  <%- include('components/tech-content', { tech: tech, type: 'QianDuanZaoDuKe' }) %>
+<% }) %>
+
+
+<!-- 前端大全 -->
+<div class="ui grid blog">
+  <div class="three wide column"></div>
+  <div class="ten wide column">
+    <div class="title-cut"><i class="square icon"></i>前端大全</div>
+  </div>
+  <div class="three wide column"></div>
+</div>
+
+<% renderInput.QianDuanDaQuan.forEach(function (tech) { %>
+  <%- include('components/tech-content', { tech: tech, type: 'QianDuanDaQuan' }) %>
+<% }) %>
+
+
+
+
+<%- include('footer') %>

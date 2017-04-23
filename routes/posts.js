@@ -17,6 +17,8 @@ router.get('/', function(req, res, next) {
 
   var author = req.query.author;
 
+  var redenrInput = {};
+
   PostModel.getPosts(author)
     .then(function(result) {
       return create_at.afterFind(result);

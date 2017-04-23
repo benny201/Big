@@ -107,7 +107,7 @@ router.get('/:type/:articleId', function(req, res, next) {
   var type = req.params.type;
   var articleId = req.params.articleId;
 
-  getArticles(type, articleId);
+  // getArticles(type, articleId);
 
   if (type == 'Gushenqu') {
     GushenquModel

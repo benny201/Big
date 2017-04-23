@@ -1,9 +1,10 @@
 <div class="ui grid">
-  <div class="four wide column"></div>
-  <div class="eight wide column">
+  <div class="three wide column"></div>
+  <div class="ten wide column">
     <div class="ui segment">
       <div class="ui minimal comments">
-        <h3 class="ui dividing header">留言</h3>
+
+        <h3 class="ui dividing header">留言 <% if (!user) { "（ 请登录以使用留言功能！）"} %> </h3>
 
         <% comments.forEach(function (comment) { %>
           <div class="comment">
@@ -34,7 +35,6 @@
             <input type="submit" class="ui icon button" value="留言" />
           </form>
         <% } %>
-
       </div>
     </div>
   </div>
