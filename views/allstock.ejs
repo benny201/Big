@@ -1,0 +1,41 @@
+<%- include('header') %>
+<div class="recommend">
+  <div class="ui grid">
+    <div class="four wide column"></div>
+    <div class="eight wide column">
+      <div class="title-cut"><i class="square icon"></i>公众号 | Recom</div>
+    </div>
+    <div class="four wide column"></div>
+  </div>
+</div>
+
+<div class="ui grid">
+  <div class="four wide column"></div>
+  <div class="eight wide column">
+    <div class="ui three cards">
+      <a class="red card" href="/stock/<%=renderInput.picturename%>">
+        <div class="image">
+          <img src="/img/<%=renderInput.picturename%>.png" alt="gushequ">
+        </div>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+
+
+<div class="ui grid ">
+  <div class="four wide column"></div>
+  <div class="eight wide column">
+    <div class="title-cut"><i class="square icon"></i><%=renderInput.blogName %> | ALL</div>
+  </div>
+  <div class="four wide column"></div>
+</div>
+
+
+<% renderInput.blogContent.forEach(function (stock) { %>
+  <%- include('components/stock-content', { stock: stock, type: renderInput.blogName }) %>
+<% }) %>
+
+<%- include('footer') %>

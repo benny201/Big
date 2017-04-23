@@ -152,6 +152,8 @@ a:hover {
   padding-bottom: 1rem;
 }
 
+
+
 /* ---------- post-content ---------- */
 .blog {
   margin-top: 50px !important;
@@ -204,6 +206,11 @@ a:hover {
   width: 100% !important;
   max-width: 100% !important;
 }
+
+/*------stock content-----*/
+
+
+
 /*----------------footer--------------*/
 .fixed-footer {
   height: 118px;
@@ -222,8 +229,8 @@ footer {
   margin-top: 20px;
   background-color: #1a1818;
   text-align: left;
-  position: fixed;
-  bottom: 0px;
+  /*position: fixed;*/
+  /*bottom: 0px;*/
 }
 
 footer h1 {

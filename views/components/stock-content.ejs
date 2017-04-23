@@ -3,23 +3,15 @@
     <div class="four wide column"></div>
 
     <div class="eight wide column">
-      <div class="ui segment content-height">
-        <div class="width">
+      <div class="ui segment">
+
           <h2><a href="/stock/<%= type %>/<%= stock.articleId %>"><%= stock.title %></a></h2>
-          <br>
-          <br>
-          <h5><a href="/stock/<%= type %>/<%= stock.articleId %>">View ALL</a></h5>
-          <br>
-          <br>
-          <br>
+
           <span class="tag ">
             <span>浏览(<%= stock.pv %>)</span>
           </span>
-        </div>
+          <span style="display: inline-block;"><a href="/stock/<%= type %>/<%= stock.articleId %>">View ALL</a></span>
 
-        <div class="right">
-          <img src="/img/article.jpg" alt="article-img">
-        </div>
       </div>
     </div>
 
