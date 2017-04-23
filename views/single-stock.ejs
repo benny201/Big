@@ -1,0 +1,27 @@
+<%- include('header') %>
+
+
+<div class="post-content">
+  <div class="ui grid">
+    <div class="four wide column">
+    </div>
+
+    <div class="eight wide column">
+
+      <div class="ui segment">
+          <h2><%= stock.title %></h2>
+          <br>
+          <br>
+          <%- stock.content %>
+          <br>
+          <br>
+          <br>
+          <span class="tag ">
+            <span>浏览(<%= stock.pv %>)</span>
+          </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('footer') %>

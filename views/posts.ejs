@@ -45,6 +45,10 @@
   <div class="four wide column"></div>
 </div>
 
+<% posts.forEach(function (post) { %>
+  <%- include('components/post-content', { post: post }) %>
+<% }) %>
+
 <div class="fixed-footer">
   <div class="ui grid height">
     <div class="three wide column"></div>
