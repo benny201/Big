@@ -19,7 +19,7 @@ Integrate log in/sgin up and blog function to share your articles and comments.
 * Mongoose
 * Mongoose plugins
 
-## 
+## Quick look
 ![big](https://github.com/benny201/Big/blob/master/big.png)
 
 ## FYI
