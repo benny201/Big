@@ -2,9 +2,9 @@
 
 ## An information webstie
 Catch some daily technology and stock information information from internet by webscraping, implemented by NodeJs, see another repo: [Node-wechat-spider](https://github.com/benny201/Node-Wechat-Spider).
+Integrate log in/sgin up and blog function to share your articles and comments.
 
 ## Techs 
-
 ## Front-end
 * EJS
 * HTML/CSS/JS
