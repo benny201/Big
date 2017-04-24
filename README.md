@@ -5,13 +5,13 @@ Catch some daily technology and stock information information from internet by w
 Integrate log in/sgin up and blog function to share your articles and comments.
 
 ## Techs 
-## Front-end
+### Front-end
 * EJS
 * HTML/CSS/JS
-* Sementic-UI
+* Semantic-UI
 * some Jquery
 
-## Back-end
+### Back-end
 * Nodejs
 * Express
 * some Express middlewares
@@ -19,6 +19,7 @@ Integrate log in/sgin up and blog function to share your articles and comments.
 * Mongoose
 * Mongoose plugins
 
+## 
 
 ## FYI
 Welcome to follow it: [www.biggerpoint.com](http://34.208.181.160/)
