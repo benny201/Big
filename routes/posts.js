@@ -7,6 +7,14 @@ mongoose.Promise = require('bluebird');
 var PostModel = require('../models/posts');
 var CommentModel = require('../models/comments');
 var checkLogin = require('../middlewares/check').checkLogin;
+
+//tech model
+var ThreeSixKeModel = require('../models/techModel/ThreeSixKeModel');
+var HuLianWangPingLunModel = require('../models/techModel/HuLianWangPingLunModel');
+
+//stock model
+var GushenModel = require('../models/GushenModel');
+
 //middlewares
 var create_at = require('../middlewares/create_at');
 var markdownToHTML = require('../middlewares/markdownToHTML');
@@ -18,7 +26,59 @@ router.get('/', function(req, res, next) {
   var author = req.query.author;
 
   var redenrInput = {};
+  var stock;
+  var tech;
+  var tech2;
 
+  var getPost = PostModel.getLimitPosts(author,3)
+    .then(function(result) {
+      return create_at.afterFind(result);
+    })
+    .then(function(result) {
+      return commentOperation.afterFind(result);
+    })
+    .then(function(result) {
+      return markdownToHTML.M2H_AfterFind(result);
+    });
+
+  var getStock = GushenModel
+    .getThreeArticles()
+    .then(function(result) {
+      stock = result;
+    });
+
+  var getTech = ThreeSixKeModel
+    .getThreeArticles()
+    .then(function(result) {
+      tech = result;
+    });
+
+  var getTech2 = HuLianWangPingLunModel
+    .getThreeArticles()
+    .then(function(result) {
+      tech2 = result;
+    });
+
+  var handler = function(posts, Pv, comments) {
+      // console.log('all: ' + posts);
+      //only show part of the post
+      res.render('posts', {
+        posts: posts,
+        stock: stock,
+        tech: tech,
+        tech2: tech2
+      });
+    };
+
+    Promise.all([getPost, getStock, getTech, getTech2])
+      .then(([posts, Pv, comments, Tech2]) => handler(posts, Pv, comments))
+      .catch(next);
+
+
+});
+
+router.get('/user', function(req, res, next) {
+  var author = req.query.author;
   PostModel.getPosts(author)
     .then(function(result) {
       return create_at.afterFind(result);
@@ -32,11 +92,12 @@ router.get('/', function(req, res, next) {
     .then(function(posts) {
       // console.log('all: ' + posts);
       //only show part of the post
-      res.render('posts', {
+      res.render('user-index', {
         posts: posts
       });
     })
     .catch(next);
+
 });
 
 //Get post page

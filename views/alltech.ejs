@@ -12,8 +12,8 @@
 <div class="ui grid">
   <div class="three wide column"></div>
   <div class="ten wide column">
-    <div class="ui three cards">
-      <a class="red card" href="/stock/<%=renderInput.picturename%>">
+    <div class="ui four cards">
+      <a class="red card" href="/tech/<%=renderInput.picturename%>">
         <div class="image">
           <img src="/img/<%=renderInput.picturename%>.png" alt="gushequ">
         </div>
@@ -34,8 +34,8 @@
 </div>
 
 
-<% renderInput.blogContent.forEach(function (stock) { %>
-  <%- include('components/stock-content', { stock: stock, type: renderInput.picturename }) %>
+<% renderInput.blogContent.forEach(function (tech) { %>
+  <%- include('components/tech-content', { tech: tech, type: renderInput.picturename }) %>
 <% }) %>
 
 <%- include('footer') %>

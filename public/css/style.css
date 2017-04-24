@@ -144,12 +144,25 @@ a:hover {
 }
 
 .recommend-img {
-  width: 100% !important;
-  height: 300px;
-  border: 1px solid rgba(34, 36, 38, .15);
-  background-color: white;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  /*width: 100% !important;*/
+  /*height: 300px;
+  background-color: #fafafa;*/
+}
+
+.recom-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.image a {
+  display: inline-block;
+}
+
+.recom-content {
+  width: 50% !important;
+  margin: 0px !important;
+  padding: 0px !important;
+
 }
 
 
@@ -201,6 +214,11 @@ a:hover {
 .post-content .tag.right a {
   color: #999;
 }
+
+.post-content-span {
+  display: inline-block;
+  width: 30px;
+}
 /*－－－－－comments－－－－－*/
 .comments {
   width: 100% !important;
@@ -235,6 +253,17 @@ footer {
 
 footer h1 {
   color: white;
+}
+
+.brand {
+  text-align: center;
+}
+
+.brand h3 {
+  color: white !important;
+}
+.brand a {
+  color: white !important;
 }
 
 .footer-center {

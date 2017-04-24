@@ -24,8 +24,10 @@ router.post('/', checkNotLogin, function(req, res, next) {
   var gender = req.fields.gender;
   var bio = req.fields.bio;
   var avatar = req.files.avatar.path.split(path.sep).pop();
-  if (avatar.match("/\.(?!(gif$|jpg$|png$))/")) {
-    console.log(avatar);
+  if ((/\.(gif|jpg|jpeg|tiff|png)$/i).test(avatar)) {
+    // console.log(avatar);
+
+  } else {
     avatar = "default.jpg";
   }
   // console.log('what: ' + avatar);
@@ -71,7 +73,7 @@ router.post('/', checkNotLogin, function(req, res, next) {
 
   //sha1
   password = sha1(password);
-  console.log(password);
+  // console.log(password);
 
   // create user
   var user = {

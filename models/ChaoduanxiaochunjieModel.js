@@ -15,7 +15,7 @@ module.exports = {
     }
     return Chaoduanxiaochunjie
       .find(query)
-      .sort({ _id: -1 });
+      .sort({ articleId: -1 });
   },
 
   //get three articles

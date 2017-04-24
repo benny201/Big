@@ -14,10 +14,12 @@
       <div class="ui segment content-height">
         <div class="width">
           <h2><a href="/posts/<%= post._id %>"><%= post.title %></a></h2>
-          <span><a href="">By / <%= post.author.name %></a></span>
+          <span style="color: black;">By / <%= post.author.name %></span>
           <br>
           <br>
-          <pre><%- post.content %></pre>
+          <span class="recom-title post-content-span" ><%- post.content %></span>
+          <span>......<a href="/posts/<%= post._id%>"><i class="arrow circle right icon"></i>View ALL</a></span>
+          <br>
           <br>
           <br>
           <br>

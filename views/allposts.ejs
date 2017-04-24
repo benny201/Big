@@ -2,11 +2,11 @@
 
 
 <div class="ui grid ">
-  <div class="four wide column"></div>
-  <div class="eight wide column">
+  <div class="three wide column"></div>
+  <div class="ten wide column">
     <div class="title-cut"><i class="square icon"></i>博文 | ALL</div>
   </div>
-  <div class="four wide column"></div>
+  <div class="three wide column"></div>
 </div>
 
 
@@ -14,4 +14,19 @@
   <%- include('components/post-content', { post: post }) %>
 <% }) %>
 
-<%- include('footer') %>
+<div class="fixed-footer" style="position: fixed; bottom: 0px;">
+  <div class="ui grid height">
+    <div class="four wide column"></div>
+    <div class="eight wide column brand">
+      <a class="brand" href="/posts">
+        <h1>Big</h1>
+      </a>
+      <h3>By Benny | <i class="mail outline icon"></i><a href="mailto:zwu58@ucsc.edu">zwu58@ucsc.edu</a> | <i class="github icon"></i><a href="https://github.com/benny201">Github</a></h3>
+    </div>
+    <div class="four wide column"></div>
+  </div>
+</div>
+<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/semantic-ui/2.1.8/semantic.min.js"></script>
+  </body>
+</html>

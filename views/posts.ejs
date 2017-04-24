@@ -3,31 +3,130 @@
   <div class="ui grid">
     <div class="three wide column"></div>
     <div class="ten wide column">
-      <div class="title-cut"><i class="square icon"></i>推荐 | Recom</div>
+      <div class="title-cut"><i class="square icon"></i>今日推荐 | Recom</div>
     </div>
     <div class="three wide column"></div>
   </div>
+
   <div class="ui grid">
     <div class="three wide column"></div>
     <div class="ten wide column ">
-      <div class="recommend-img"></div>
+<div class="ui three column grid">
+  <div class="column">
+    <div class="ui fluid card">
+      <div class="image">
+          <img src="/img/gupiao.png">
+      </div>
+      <div class="content">
+        <a class="header recom-title" href="/stock/Gushenqu/<%= stock.articleId %>"><%= stock[0].title%></a>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="ui fluid card">
+      <div class="image">
+        <img src="/img/tech.png">
+      </div>
+      <div class="content">
+        <a class="header recom-title" href="/tech/ThreeSixKe/<%= tech[1].articleId %>"><%= tech[1].title%></a>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="ui fluid card">
+      <div class="image">
+        <img src="/img/tech2.png">
+      </div>
+      <div class="content">
+        <a class="header recom-title" href="/tech/HuLianWangPingLun/<%= tech2[0].articleId %>"><%= tech2[0].title%></a>
+      </div>
     </div>
   </div>
 </div>
 
+
+    </div>
+  </div>
+</div>
 
 <div class="ui grid blog">
   <div class="three wide column"></div>
   <div class="ten wide column">
-    <div class="title-cut"><i class="square icon"></i>博文 | Blog</div>
+    <div class="title-cut"><i class="square icon"></i>公众号 | 推荐</div>
   </div>
   <div class="three wide column"></div>
 </div>
 
 
+<div class="ui grid">
+  <div class="three wide column"></div>
+  <div class="ten wide column">
+    <div class="ui four cards">
+      <a class="red card" href="/stock/Gushenqu">
+        <div class="image">
+          <img src="/img/Gushenqu.png" alt="gushequ">
+        </div>
+      </a>
+
+      <a class="orange card" href="/tech/ThreeSixKe">
+        <div class="image" >
+          <img src="/img/ThreeSixKe.png" alt="ThreeSixKe">
+        </div>
+      </a>
+
+      <a class="orange card" href="/stock/Caijingmeinv">
+        <div class="image" >
+          <img src="/img/Caijingmeinv.png" alt="Caijingmeinv">
+        </div>
+      </a>
+
+      <a class="yellow card" href="/tech/HuLianWangPingLun">
+        <div class="image" >
+          <img src="/img/HuLianWangPingLun.png" alt="HuLianWangPingLun">
+        </div>
+      </a>
+
+
+      <a class="olive card" href="/stock/Fandeyibiao">
+        <div class="image">
+          <img src="/img/Fandeyibiao.png" alt="Fandeyibiao">
+        </div>
+      </a>
+
+      <a class="green card" href="/stock/Gufengle">
+        <div class="image">
+          <img src="/img/Gufengle.png" alt="gulefeng">
+        </div>
+      </a>
+
+      <a class="red card" href="/tech/DeveloperWorks">
+        <div class="image">
+          <img src="/img/DeveloperWorks.png" alt="DeveloperWorks">
+        </div>
+      </a>
+
+      <a class="olive card" href="/tech/QianDuanDaQuan">
+        <div class="image">
+          <img src="/img/QianDuanDaQuan.png" alt="QianDuanDaQuan">
+        </div>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<div class="ui grid blog">
+  <div class="three wide column"></div>
+  <div class="ten wide column">
+    <div class="title-cut"><i class="square icon"></i>博文 | Article</div>
+  </div>
+  <div class="three wide column"></div>
+</div>
+
 <% posts.forEach(function (post) { %>
   <%- include('components/post-content', { post: post }) %>
 <% }) %>
+
 
 <div class="ui grid blog">
   <div class="three wide column"></div>
@@ -37,6 +136,10 @@
   <div class="three wide column"></div>
 </div>
 
+<% tech.forEach(function (tech) { %>
+  <%- include('components/tech-content', { tech: tech, type: 'ThreeSixKe'  }) %>
+<% }) %>
+
 <div class="ui grid blog">
   <div class="three wide column"></div>
   <div class="ten wide column">
@@ -45,31 +148,30 @@
   <div class="three wide column"></div>
 </div>
 
-<% posts.forEach(function (post) { %>
-  <%- include('components/post-content', { post: post }) %>
+<% stock.forEach(function (stock) { %>
+  <%- include('components/stock-content', { stock: stock, type: 'Gushenqu' }) %>
 <% }) %>
+
+
 
 <div class="fixed-footer">
   <div class="ui grid height">
-    <div class="two wide column"></div>
-    <div class="two wide column">
-      <div class="two wide column ">
-        <a class="footer-center" href="/posts"><h1>Big</h1></a>
-      </div>
+    <div class="four wide column"></div>
+    <div class="eight wide column brand">
+      <a class="brand" href="/posts">
+        <h1>Big</h1>
+      </a>
+      <h3>By Benny | <i class="mail outline icon"></i><a href="mailto:zwu58@ucsc.edu">zwu58@ucsc.edu</a> | <i class="github icon"></i><a href="https://github.com/benny201">Github</a></h3>
     </div>
+    <div class="four wide column"></div>
   </div>
 </div>
 <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/semantic-ui/2.1.8/semantic.min.js"></script>
 <script type="text/javascript">
-    // 点击按钮弹出下拉框
-    $('.ui.dropdown').dropdown();
-    // 鼠标悬浮在头像上，弹出气泡提示框
-    $('.post-content .avatar').popup({
-      inline: true,
-      position: 'bottom right',
-      lastResort: 'bottom right',
-    });
-  </script>
+  $('.special.cards .image').dimmer({
+    on: 'hover'
+  });
+</script>
   </body>
 </html>

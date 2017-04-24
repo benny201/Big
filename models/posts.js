@@ -29,6 +29,20 @@ module.exports = {
       .populate({ path: 'author',  model: 'User' })
       .sort({ _id: -1 });
   },
+  //getlimitpost
+  getLimitPosts: function(author, num) {
+    var query = {};
+    var limitNum = num;
+    if (author) {
+      query.author = author;
+    }
+    return Post
+      .find(query)
+      .populate({ path: 'author',  model: 'User' })
+      .sort({ _id: -1 })
+      .limit(limitNum);
+  },
+
   //delete post by id
   deletePostById: function(postId, author) {
     return Post

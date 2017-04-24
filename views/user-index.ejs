@@ -1,0 +1,34 @@
+<%- include('header') %>
+<div class="recommend">
+  <div class="ui grid">
+    <div class="three wide column"></div>
+    <div class="ten wide column">
+      <div class="title-cut"><i class="square icon"></i>你的全部博文 | Articles</div>
+    </div>
+    <div class="three wide column"></div>
+  </div>
+</div>
+
+<% posts.forEach(function (post) { %>
+  <%- include('components/post-content', { post: post }) %>
+<% }) %>
+
+
+
+
+
+
+<div class="fixed-footer" style="position: fixed; bottom: 0px;">
+  <div class="ui grid height">
+    <div class="two wide column"></div>
+    <div class="two wide column">
+      <div class="two wide column ">
+        <a class="footer-center" href="/posts"><h1>Big</h1></a>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/semantic-ui/2.1.8/semantic.min.js"></script>
+  </body>
+</html>
