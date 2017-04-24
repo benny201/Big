@@ -21,4 +21,4 @@ Catch some daily technology and stock information information from internet by w
 
 
 ## FYI
-welcome to follow it: [www.biggerpoint.com][http://34.208.181.160/]
+Welcome to follow it: [www.biggerpoint.com](http://34.208.181.160/)
