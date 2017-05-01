@@ -26,4 +26,4 @@ Integrate log in/sgin up and blog function to share your articles and comments.
 ![big](https://github.com/benny201/Big/blob/master/big.png)
 
 ## FYI
-Welcome to follow it: [www.biggerpoint.com](www.biggerpoint.com)
+Welcome to follow it: [www.biggerpoint.com](http://www.biggerpoint.com)
